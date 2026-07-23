@@ -1,118 +1,210 @@
-Data Deletion Request
-
-To request the deletion of your account and all associated data in the MathSwipe: Brain Challenge app, please follow these steps:
-
-    Send an email to: htozn<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Deletion Request - MathSwipe</title>
+    <title>Account & Data Deletion — MathSwipe</title>
     <style>
+        :root {
+            --bg-color: #0d0f12;
+            --card-bg: #161920;
+            --text-color: #ffffff;
+            --text-muted: #9ba3af;
+            --accent-blue: #3b82f6;
+            --accent-red: #ef4444;
+            --border-color: #232733;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        .container {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #2c3e50;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-        .instruction-box {
-            background-color: #f8f9fa;
-            border-left: 4px solid #e74c3c;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-        .step-list {
-            list-style: none;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
         }
-        .step-list li {
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
+
+        .container {
+            max-width: 600px;
+            width: 90%;
+            margin: 40px auto;
         }
-        .step-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #27ae60;
-            font-weight: bold;
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
         }
-        .email-link {
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-blue);
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: var(--text-color);
+        }
+
+        p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .steps-list {
+            background-color: #12151c;
+            border: 1px solid #1e222e;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .step-item {
+            margin-bottom: 12px;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .step-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-item strong {
+            color: var(--accent-blue);
+        }
+
+        .email-highlight {
+            color: #60a5fa;
+            word-break: break-all;
+        }
+
+        .warning-box {
+            background-color: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 10px;
+            padding: 14px 16px;
+            color: #fca5a5;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .btn-container {
+            text-align: center;
+        }
+
+        .btn-delete {
             display: inline-block;
-            margin-top: 20px;
-            padding: 12px 24px;
-            background-color: #2c3e50;
-            color: #fff;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px 24px;
+            background-color: var(--accent-red);
+            color: #ffffff;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.2s;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            text-align: center;
         }
-        .email-link:hover {
-            background-color: #34495e;
+
+        .btn-delete:hover {
+            background-color: #dc2626;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
         }
-        .warning {
-            color: #c0392b;
-            font-weight: bold;
+
+        .back-link {
+            display: block;
+            text-align: center;
             margin-top: 20px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
         }
-        .footer {
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #7f8c8d;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
+
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Data Deletion Request</h1>
-    
-    <p>To request the deletion of your account and all associated data in the <strong>MathSwipe: Brain Challenge</strong> app, please follow these steps:</p>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Math<span>Swipe</span></div>
+            <div class="subtitle">Account & Data Deletion Request</div>
+        </div>
 
-    <div class="instruction-box">
-        <ul class="step-list">
-            <li>Send an email to: <strong>htoznayegames@gmail.com</strong></li>
-            <li>Use the subject line: <strong>"Data Deletion Request - MathSwipe"</strong></li>
-            <li>In the body of the email, please specify your <strong>User ID</strong> or the <strong>email address</strong> used for Google Login.</li>
-        </ul>
+        <div class="card">
+            <h2>How to request account deletion</h2>
+            <p>If you wish to delete your account, game progress, and all personal data associated with <strong>MathSwipe: Brain Challenge</strong>, please follow the steps below:</p>
+
+            <div class="steps-list">
+                <div class="step-item">
+                    <strong>1. Send an email to:</strong><br>
+                    <span class="email-highlight">htoznayegames@gmail.com</span>
+                </div>
+                <div class="step-item">
+                    <strong>2. Subject line:</strong><br>
+                    Data Deletion Request - MathSwipe
+                </div>
+                <div class="step-item">
+                    <strong>3. Body of the email:</strong><br>
+                    Specify your User ID or the email address linked to your Google Play Games account.
+                </div>
+            </div>
+
+            <div class="warning-box">
+                ⚠️ <strong>Warning:</strong> This process is permanent. Upon request, all your high scores, unlocked themes, coins, and leaderboard ranks will be permanently removed and cannot be recovered.
+            </div>
+
+            <div class="btn-container">
+                <a href="mailto:htoznayegames@gmail.com?subject=Data%20Deletion%20Request%20-%20MathSwipe&body=Hello,%20I%20would%20like%20to%20request%20the%20deletion%20of%20my%20MathSwipe%20account%20and%20data.%20My%20Google%20Login%20email%20is:%20" class="btn-delete">Send Deletion Email</a>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Main Page</a>
     </div>
 
-    <p>We will process your request and delete all your personal data from our records within <strong>7 business days</strong>.</p>
-    
-    <p class="warning">Please note: This action is permanent and cannot be undone. Once your data is deleted, your progress, scores, and account information will be lost forever.</p>
-
-    <a href="mailto:htoznayegames@gmail.com?subject=Data%20Deletion%20Request%20-%20MathSwipe&body=Please%20delete%20my%20data.%20My%20User%20ID%20or%20Email%20is:%20" class="email-link">
-        Send Deletion Email
-    </a>
-
-    <div class="footer">
-        <p>This page is part of the MathSwipe: Brain Challenge privacy compliance. Last updated: 2026-04-24</p>
-    </div>
-</div>
+    <footer>
+        Compliance Page • Last updated: July 2026<br>
+        &copy; 2026 MathSwipe: Brain Challenge
+    </footer>
 
 </body>
-</html>htoznayegames@gmail.com
-
-    Use the subject line: "Data Deletion Request - MathSwipe"
-
-    In the body of the email, please specify your User ID or the email address used for Google Login.
-
-We will process your request and delete all your personal data from our records within 7 business days. Please note that this action is permanent and cannot be undone.
+</html>
